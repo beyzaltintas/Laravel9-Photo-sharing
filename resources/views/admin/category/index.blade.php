@@ -11,7 +11,7 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Category List</h3>
+                    <a href="/admin/category/create" class="btn btn-dark btn-fw" style="width: 200px">Add  Category</a>
                 </div>
             </div>
         </div>
