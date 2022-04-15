@@ -11,7 +11,7 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <a href="/admin/category/create" class="btn btn-dark btn-fw" style="width: 200px">Add  Category</a>
+                    <a href="{{route('admin.category.create')}}" class="btn btn-dark btn-fw" style="width: 200px">Add  Category</a>
                 </div>
             </div>
         </div>
@@ -38,17 +38,17 @@
                     <tbody>
                     @foreach($data as $rs)
                     <tr>
-                        <th scope="row">{{$rs->id}}</th>
+                        <td {{$rs->id}}</td>
                         <td>{{$rs->id}}</td>
                         <td>{{$rs->title}}</td>
                         <td>{{$rs->keywords}}</td>
                         <td>{{$rs->description}}</td>
                         <td>{{$rs->image}}</td>
                         <td>{{$rs->status}}</td>
-                        <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-primary btn-sm">Edit</a> </td>
-                        <td><a href="/admin/category/destroy/{{$rs->id}}"class="btn btn-block btn-danger btn-sm"
+                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Edit</a> </td>
+                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-block btn-danger btn-sm"
                                onclick="return confirm('Are you sure you want to delete?')">Delete</a> </td>
-                        <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-success btn-sm">Show</a> </td>
+                        <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success btn-sm">Show</a> </td>
                     </tr>
                     @endforeach
                     </tbody>

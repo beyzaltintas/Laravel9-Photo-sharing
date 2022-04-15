@@ -29,7 +29,7 @@
                 <h4 class="card-title">Category Elements</h4>
             </div>
 
-                <form class="forms-sample" action="/admin/category/update/{{$data->id}}" method="post">
+                <form class="forms-sample" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post">
                     @csrf
                     <div class="card-body">
                     <div class="form-group">
@@ -56,6 +56,7 @@
                           </span>
                             </div>
                         </div>
+
 
                     <div class="form-group">
                         <label>Status</label>

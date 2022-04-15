@@ -20,8 +20,8 @@
    <! -- default --!>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header" id="top">
-                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary btn-fw" style="width: 200px">Edit</a>
-                <a href="/admin/category/destroy/{{$data->id}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-fw" style="width: 200px">Delete</a>
+                <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary btn-fw" style="width: 200px">Edit</a>
+                <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-fw" style="width: 200px">Delete</a>
                 <br>
             </br>
                 <div class="card">

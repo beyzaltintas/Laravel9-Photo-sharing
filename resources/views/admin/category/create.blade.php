@@ -38,7 +38,7 @@
                 <h4 class="card-title">Category Elements</h4>
             </div>
 
-                <form class="forms-sample" action="/admin/category/store" method="post">
+                <form class="forms-sample" action="{{route('admin.category.store')}}" method="post">
                     @csrf
                     <div class="card-body">
                     <div class="form-group">
@@ -80,11 +80,5 @@
                     </div>
                 </form>
             </div>
-
-
-
-
-
-
 
 @endsection
