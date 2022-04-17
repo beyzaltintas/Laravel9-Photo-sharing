@@ -2,8 +2,6 @@
 
 @section('title', 'Category List')
 
-
-
 @section('content')
     <!-- wrapper  -->
     <!-- ============================================================== -->
@@ -14,7 +12,6 @@
                     <a href="{{route('admin.category.create')}}" class="btn btn-dark btn-fw" style="width: 200px">Add  Category</a>
                 </div>
             </div>
-        </div>
         <!-- ============================================================== -->
 
         <div class="card">
@@ -33,7 +30,7 @@
                         <th style="width: 40px">Delete</th>
                         <th style="width: 40px">Show</th>
 
-                    </tr>
+                    </th>
                     </thead>
                     <tbody>
                     @foreach($data as $rs)
@@ -43,7 +40,11 @@
                         <td>{{$rs->title}}</td>
                         <td>{{$rs->keywords}}</td>
                         <td>{{$rs->description}}</td>
-                        <td>{{$rs->image}}</td>
+                        <td>
+                          @if ($rs->image)
+                          <img src="{{Storage::url($rs->image)}}" style="height: 40px">
+                          @endif
+                        </td>
                         <td>{{$rs->status}}</td>
                         <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary btn-sm">Edit</a> </td>
                         <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}"class="btn btn-block btn-danger btn-sm"
