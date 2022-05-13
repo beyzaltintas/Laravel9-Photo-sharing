@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanel\AdminPhotoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -46,7 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
    Route::get('/', [AdminHomeController::class,'index'])->name(name:'index');
 // *********************** ADMIN CATEGORY ROUTES ************************
-    Route::prefix('category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
+    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
         Route::get('/', 'index')->name(name:'index');
         Route::get('/create', 'create')->name(name:'create');
         Route::post('/store', 'store')->name(name:'store');
@@ -55,5 +56,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/destroy/{id}', 'destroy')->name(name:'destroy');
         Route::get('/show/{id}', 'show')->name(name:'show');
         });
-     });
+// *********************** ADMIN PHOTO ROUTES ************************
+    Route::prefix('/photo')->name('photo.')->controller(AdminPhotoController::class)->group(function () {
+        Route::get('/', 'index')->name(name:'index');
+        Route::get('/create', 'create')->name(name:'create');
+        Route::post('/store', 'store')->name(name:'store');
+        Route::get('/edit/{id}', 'edit')->name(name:'edit');
+        Route::post('/update/{id}', 'update')->name(name:'update');
+        Route::get('/destroy/{id}', 'destroy')->name(name:'destroy');
+        Route::get('/show/{id}', 'show')->name(name:'show');
+    });
 });

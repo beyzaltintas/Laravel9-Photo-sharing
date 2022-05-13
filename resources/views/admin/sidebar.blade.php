@@ -21,7 +21,7 @@
                         <a class="nav-link" href="/admin/category"><span class="menu-title"><i class="fa fa-fw fa-list"></i>Categories</span></a>
                     </li>
                     <li class="nav-item menu-items">
-                        <a class="nav-link" href="/admin/photo"><span class="menu-title"><i class="fa fa-fw fa-images"></i>Photos</span></a>
+                        <a class="nav-link" href="/admin/photo"><span class="menu-title"><i class="fa fa-fw fa-images"></i>Photo</span></a>
                     </li>
                     <li class="nav-item menu-items">
                         <a class="nav-link" href="/admin/user"><span class="menu-title"><i class="fa fa-fw fa-user-circle"></i>Users</span></a>

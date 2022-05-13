@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Category')
+@section('title', 'Add Photo')
 
 
 
@@ -11,7 +11,7 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Add Category</h3>
+                    <h3 class="text-center">Add Photo</h3>
                 </div>
             </div>
         </div>
@@ -23,18 +23,17 @@
 
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Category Elements</h4>
+                <h4 class="card-title">Photo Elements</h4>
             </div>
 
-                <form class="forms-sample" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data" >
+                <form class="forms-sample" action="{{route('admin.photo.store')}}" method="post" enctype="multipart/form-data" >
                     @csrf
                     <div class="card-body">
 
                         <div class="form-group">
-                            <label>Parent Category</label>
+                            <label>Parent Photo</label>
 
-                            <select class="form-control" name="parent_id" style="width: 100%;" >
-                                <option value="0" selected="selected">Main Category</option>
+                            <select class="form-control" name="category_id" style="width: 100%;">
                                 @foreach($data as $rs)
                                     <option value="{{$rs->id}}"> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                 @endforeach
@@ -54,6 +53,32 @@
                         <label for="exampleInputEmail1">Description</label>
                         <input type="text" class="form-control" name="description" placeholder="Description">
                     </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">VideoLink</label>
+                            <input type="text" class="form-control" name="videolink" placeholder="VideoLink">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Dimensions</label>
+                            <input type="text" class="form-control" name="dimensions" placeholder="Dimensions">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Camera</label>
+                            <input type="text" class="form-control" name="camera" placeholder="Camera">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Lens</label>
+                            <input type="text" class="form-control" name="lens" placeholder="Lens">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Location</label>
+                            <input type="text" class="form-control" name="location" placeholder="Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Detail Inf. </label>
+                            <textarea class="form-control" name="detail">
+
+                            </textarea>
+                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputFile">Image</label>
