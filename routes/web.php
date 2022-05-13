@@ -46,7 +46,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::prefix('admin')->name('admin.')->group(function () {
    Route::get('/', [AdminHomeController::class,'index'])->name(name:'index');
 // *********************** ADMIN CATEGORY ROUTES ************************
-    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
+    Route::prefix('category')->name('category.')->controller(AdminCategoryController::class)->group(function () {
         Route::get('/', 'index')->name(name:'index');
         Route::get('/create', 'create')->name(name:'create');
         Route::post('/store', 'store')->name(name:'store');
