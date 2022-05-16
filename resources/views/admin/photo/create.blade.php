@@ -2,7 +2,9 @@
 
 @section('title', 'Add Photo')
 
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <!-- wrapper  -->
@@ -11,7 +13,7 @@
         <div class="container-fluid dashboard-content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h3 class="text-center">Add Photo</h3>
+                    <h2 class="text-center">Add Photo</h2>
                 </div>
             </div>
         </div>
@@ -23,7 +25,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Photo Elements</h4>
+                <h3 class="card-title">Photo Elements</h3>
             </div>
 
                 <form class="forms-sample" action="{{route('admin.photo.store')}}" method="post" enctype="multipart/form-data" >
@@ -31,7 +33,7 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            <label>Parent Photo</label>
+                            <label for="exampleInputEmail1">Parent Photo</label>
 
                             <select class="form-control" name="category_id" style="width: 100%;">
                                 @foreach($data as $rs)
@@ -75,9 +77,19 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Detail Inf. </label>
-                            <textarea class="form-control" name="detail">
+                            <textarea class="form-control" id="detail" name="detail">
 
                             </textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#detail' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
                         </div>
 
                         <div class="form-group">

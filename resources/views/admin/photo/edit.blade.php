@@ -1,8 +1,11 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Edit Photo :' .$data->title)
+@section('title', 'Edit Photo :'.$data->title)
 
-
+@section('head')
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endsection
 
 @section('content')
     <!-- wrapper  -->
@@ -22,8 +25,8 @@
             <div class="page-header" id="top">
                 <h2 class="pageheader-title">Edit Photo:{{$data->title}} </h2>
 
-                <br>
-            </br>
+            <br>
+
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Photo Elements</h4>
@@ -77,8 +80,8 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Detail Inf.</label>
-                            <textarea class="form-control" name="detail">
-                                {{$data->location}}
+                            <textarea class="textarea" id="detail" name="detail">
+                                {{$data->detail}}
                             </textarea>
                         </div>
 
@@ -108,10 +111,15 @@
                 </form>
             </div>
 
+@endsection
+@section('foot')
+     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-
-
-
-
+    <script>
+      $(function () {
+          //Summernote
+          $('.textarea').summernote()
+      })
+    </script>
 
 @endsection
