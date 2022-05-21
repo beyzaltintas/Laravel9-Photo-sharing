@@ -65,11 +65,12 @@
         <div class="container-fluid p-0">
             <div class="row no-gutters ">
                 <div class="col-xl-4 col-md-4">
+                    @foreach($photolist1 as $rs)
                     <div class="single_photography">
                         <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/1.png" alt="">
+                            <img src="{{Storage::url($rs->image)}}" alt="">
                         </div>
-                        <a  href="baby_gallery.html" class="hover ">
+                        <a  href="baby_gallery.html" class="hover">
                             <div class="hover_inner">
                                 <h3>Baby album</h3>
                                 <span>Photography / Baby</span>
@@ -77,110 +78,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/2.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/3.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/4.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/5.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/6.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/7.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/8.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_photography">
-                        <div class="thumb">
-                            <img src="{{asset('assets')}}/img/gallery/9.png" alt="">
-                        </div>
-                        <a  href="baby_gallery.html" class="hover ">
-                            <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
