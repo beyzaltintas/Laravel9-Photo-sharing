@@ -1,6 +1,6 @@
 @extends('layouts.frontbase')
 
-@section('title', $data->title ,'Gallery')
+@section('title', $data->title . ' ' . 'Gallery')
 
 @section('content')
     <!-- bradcam_area  -->
