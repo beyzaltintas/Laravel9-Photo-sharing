@@ -62,15 +62,19 @@
                 </div>
             </div>
         </div>
+
+
         <div class="container-fluid p-0">
+
             <div class="row no-gutters ">
+                @foreach($photolist1 as $rs)
                 <div class="col-xl-4 col-md-4">
-                    @foreach($photolist1 as $rs)
+
                     <div class="single_photography">
                         <div class="thumb">
-                            <img src="{{Storage::url($rs->image)}}" alt="">
+                            <img src="{{Storage::url($rs->image)}}" alt=" ">
                         </div>
-                        <a  href="{{route('photo',['id'=>$rs->id])}}" class="hover">
+                        <a  href="{{route('gallery',['id'=>$rs->id])}}" class="hover">
                             <div class="hover_inner">
                                 <h3>{{$rs->title}}</h3>
                             </div>
@@ -79,8 +83,11 @@
                 </div>
                 @endforeach
             </div>
+
         </div>
+
     </div>
+
     <!-- /gallery_area  -->
 
     <!-- testimonial_area  -->

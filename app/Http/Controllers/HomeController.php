@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,10 +12,10 @@ class HomeController extends Controller
     public function index() {
 
         $sliderdata=Photo::limit(4)->get();
-        $photolist1=Photo::limit(6)->get();
+        $photolist1=Category::limit(7)->get();
         return view('home.index',[
             'sliderdata'=>$sliderdata,
-            'photolist1'=>$photolist1,
+            'photolist1'=>$photolist1
         ]);
     }
 
@@ -25,6 +26,19 @@ class HomeController extends Controller
         return view('home.photo',[
             'data'=>$data,
             'images'=>$images
+        ]);
+    }
+
+    public function gallery($gid) {
+
+        $data=Category::find($gid);
+        $gallerydata=Photo::find($gid);
+        $photos = DB::table('photos')->where('category_id',$gid)->get();
+        return view('home.gallery',[
+            'gallerydata'=>$gallerydata,
+            'photos'=>$photos,
+            'data'=>$data
+
         ]);
     }
 

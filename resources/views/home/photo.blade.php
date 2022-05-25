@@ -27,14 +27,13 @@
                         <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                                <img src="{{Storage::url($data->image)}}" style="weight:500px; height:350px">
+                                <img src="{{Storage::url($data->image)}}" style="width:700px; height:350px">
                             </div>
                             @foreach($images as $rs)
                                 <div class="swiper-slide">
-                                    <img src="{{Storage::url($rs->image)}}" style="weight:500px; height:350px">
+                                    <img src="{{Storage::url($rs->image)}}" style="width:700px; height:350px">
                                 </div>
                         @endforeach
-
 
                         </div>
                         <div class="swiper-pagination"></div>
