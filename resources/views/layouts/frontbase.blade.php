@@ -25,6 +25,16 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/slicknav.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <!-- <link rel="stylesheet" href="{{asset('assets')}}/css/responsive.css"> -->
+    <!-- Vendor CSS Files -->
+    <link href="{{asset('assets2')}}/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{asset('assets2')}}/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{asset('assets2')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('assets2')}}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{asset('assets2')}}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{asset('assets2')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{asset('assets2')}}/css/style.css" rel="stylesheet">
     @yield("head")
 </head>
 

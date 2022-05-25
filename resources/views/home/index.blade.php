@@ -70,10 +70,9 @@
                         <div class="thumb">
                             <img src="{{Storage::url($rs->image)}}" alt="">
                         </div>
-                        <a  href="baby_gallery.html" class="hover">
+                        <a  href="{{route('photo',['id'=>$rs->id])}}" class="hover">
                             <div class="hover_inner">
-                                <h3>Baby album</h3>
-                                <span>Photography / Baby</span>
+                                <h3>{{$rs->title}}</h3>
                             </div>
                         </a>
                     </div>

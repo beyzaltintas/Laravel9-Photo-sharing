@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,17 @@ class HomeController extends Controller
         $photolist1=Photo::limit(6)->get();
         return view('home.index',[
             'sliderdata'=>$sliderdata,
-            'photolist1'=>$photolist1
+            'photolist1'=>$photolist1,
+        ]);
+    }
+
+    public function photo($id) {
+
+        $data=Photo::find($id);
+        $images = DB::table('images')->where('photo_id',$id)->get();
+        return view('home.photo',[
+            'data'=>$data,
+            'images'=>$images
         ]);
     }
 
