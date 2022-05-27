@@ -32,6 +32,8 @@ Route::get('/', [HomeController::class,'index'])->name(name:'home');
 Route::get('/about', [HomeController::class,'about'])->name(name:'about');
 Route::get('/references', [HomeController::class,'references'])->name(name:'references');
 Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
+Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
+
 
 
 // 4- Route -> Controller -> view

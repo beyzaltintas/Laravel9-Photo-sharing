@@ -35,34 +35,45 @@
                                 <div class="col-12">
                                     <h2 class="contact-title">Get in Touch</h2>
                                 </div>
+                                @include ('home.messages')
                                 <div class="col-lg-8">
-                                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Name"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                                                </div>
-                                            </div>
+                                <div class="contact-form">
+                                    <form id="checkout-form" action="{{route("storemessage")}}" method="post" class="clearfix">
+                                        @csrf
+                                        <div class="control-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Name & Surname"
+                                                   required="required"
+                                                   data-validation-required-message="Name & Surname">
+                                            <p class="help-block text-danger"></p>
                                         </div>
-                                        <div class="form-group mt-3">
-                                            <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                                        <div class="control-group">
+                                            <input type="tel" class="form-control" name="phone" placeholder="Phone Number"
+                                                   required="required"
+                                                   data-validation-required-message="Phone Number">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="control-group">
+                                            <input type="email" class="form-control" name="email" placeholder="E-mail"
+                                                   required="required"
+                                                   data-validation-required-message="E-mail">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="control-group">
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                                   required="required"
+                                                   data-validation-required-message="Subject">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="control-group">
+                                            <textarea class="input-group" name="message" type="text" placeholder="Your Message"></textarea>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary me-2" type="submit" value="Send Message">Send Message
+                                            </button>
                                         </div>
                                     </form>
+                                </div>
                                 </div>
                                 <div class="col-lg-3 offset-lg-1">
                                     <div class="media contact-info">
