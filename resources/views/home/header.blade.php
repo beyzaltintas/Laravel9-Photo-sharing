@@ -19,8 +19,9 @@
                         <div class="main-menu  d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a class="active" href="index.html">home</a></li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a class="active" href="{{route('home')}}">home</a></li>
+                                    <li><a href="{{route('about')}}">About Us</a></li>
+                                    <li><a href="{{route('references')}}">References</a></li>
                                     <li><a href="album.html">Albums</a></li>
                                     <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
@@ -33,7 +34,7 @@
                                             <li><a href="elements.html">elements</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
