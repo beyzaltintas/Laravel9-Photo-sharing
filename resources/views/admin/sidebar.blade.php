@@ -36,7 +36,7 @@
                         <a class="nav-link" href="/admin/social"><span class="menu-title"><i class="fa fa-fw fa-at"></i>Social</span></a>
                     </li>
                     <li class="nav-item menu-items">
-                        <a class="nav-link" href="/admin/faq"><span class="menu-title"><i class="fa fa-fw fa-question-circle"></i>FAQ</span></a>
+                        <a class="nav-link" href="{{route('admin.faq.index')}}"><span class="menu-title"><i class="fa fa-fw fa-question-circle"></i>FAQ</span></a>
                     </li>
 
                     <li class="nav-header">LABELS</li>
