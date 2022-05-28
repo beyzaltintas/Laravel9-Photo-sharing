@@ -30,7 +30,7 @@
                         <a class="nav-link" href="/admin/comment"><span class="menu-title"><i class="fa fa-fw fa-comment"></i>Comments</span></a>
                     </li>
                     <li class="nav-item menu-items">
-                        <a class="nav-link" href="/admin/messages"><span class="menu-title"><i class="fa fa-fw fa-envelope"></i>Messages</span></a>
+                        <a class="nav-link" href="{{route('admin.message.index')}}"><span class="menu-title"><i class="fa fa-fw fa-envelope"></i>Messages</span></a>
                     </li>
                     <li class="nav-item menu-items">
                         <a class="nav-link" href="/admin/social"><span class="menu-title"><i class="fa fa-fw fa-at"></i>Social</span></a>
