@@ -90,16 +90,18 @@ class HomeController extends Controller
         $data->ip= request()->ip();
         $data->save();
 
-        return redirect()->route('photo',['id'=>$request->input('photo_id')])->with('info','Your comment has been sent, Thank You.');
+        return redirect()->route('photo',['id'=>$request->input('photo_id')])->with('success','Your comment has been sent, Thank You.');
     }
 
     public function photo($id) {
 
         $data=Photo::find($id);
         $images = DB::table('images')->where('photo_id',$id)->get();
+        $reviews=Comment::where('photo_id',$id)->get();
         return view('home.photo',[
             'data'=>$data,
-            'images'=>$images
+            'images'=>$images,
+            'reviews'=>$reviews
         ]);
     }
 

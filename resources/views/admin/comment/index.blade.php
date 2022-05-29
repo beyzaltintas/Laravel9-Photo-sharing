@@ -1,0 +1,63 @@
+@extends('layouts.adminbase')
+
+@section('title', 'Comment & Reviews')
+
+@section('content')
+    <!-- wrapper  -->
+    <!-- ============================================================== -->
+    <div class="dashboard-wrapper">
+        <div class="container-fluid dashboard-content">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                </div>
+            </div>
+            <!-- ============================================================== -->
+
+            <div class="card">
+                <h5 class="card-header">Comment List</h5>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Review</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Status</th>
+                            <th style="width: 40px">Show</th>
+                            <th style="width: 40px">Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data as $rs)
+                            <tr>
+
+                                <td>{{$rs->id}}</td>
+                                <td><a href="{{route('admin.photo.show',['id'=>$rs->photo_id])}}">
+                                    {{$rs->photo->title}}</a></td>
+                                <td>{{$rs->user->name}}</td>
+                                <td>{{$rs->subject}}</td>
+                                <td>{{$rs->review}}</td>
+                                <td>{{$rs->rate}}</td>
+                                <td>{{$rs->status}}</td>
+                                <td>
+                                    <a href="{{route('admin.comment.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm"
+                                       onclick="return !window.open(this.href,'','top=50 left=100 width=100 , height=700')">
+                                        Show
+                                    </a>
+                                </td>
+                                <td><a href="{{route('admin.comment.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm"
+                                       onclick="return confirm('Are you sure you want to delete?')">Delete</a> </td>
+
+
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+@endsection
