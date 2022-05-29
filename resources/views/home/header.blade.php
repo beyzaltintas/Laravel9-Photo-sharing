@@ -40,13 +40,26 @@
                             </nav>
                         </div>
                     </div>
+
                     <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                         <div class="social_links">
-                            <ul>
-                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
-                            </ul>
+
+                            @auth()
+                                <a href="/logoutuser"  class="btn-link" style="color:#ffffff">
+                                    <i class="fa mr--8 fa-user-o" ></i>
+                                    <span>Logout</span>
+                                </a>
+                            @endauth
+@guest()
+                            <a href="/loginuser"  class="btn-link" style="color:#ffffff">
+                                <i class="fa mr--8 fa-user-o" ></i>
+                                <span>Login</span>
+
+                                <a href="/registeruser"  class="btn-link" style="color:#ffffff">
+                                    <span>Register</span>
+                                    @endguest
+                                </a>
+                            </a>
                         </div>
                     </div>
                     <div class="col-12">

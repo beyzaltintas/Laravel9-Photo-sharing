@@ -13,8 +13,8 @@ class Photo extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    public function reviews()
+    public function comment()
     {
-        return $this->belongsTo(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 }

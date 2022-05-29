@@ -43,9 +43,11 @@
                 </div>
 
                 <div class="col-lg-4">
+
+                    <h6><a href="#">{{$data->comment->count('id')}}  Comment(s)</a></h6>
                     @include('home.messages')
                     <div class="portfolio-info">
-                        <h3>{{$data->title}}</h3>
+                        <h3>{{$data->title}} </h3>
                         <ul>
                             <li><strong>Location</strong>:{{$data->location}}</li>
                             <li><strong>Camera</strong>:{{$data->camera}}</li>
@@ -66,7 +68,6 @@
 
                 <div class="container">
                     <div class="row">
-                        <h4>5 Comments</h4>
                         <div class="col-lg-8 posts-list">
                             @foreach($reviews as $rs)
                             <div class="single-post">
