@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPanel\AdminPhotoController;
+use App\Http\Controllers\AdminPanel\AdminUserController;
 use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\ImageController;
@@ -124,5 +125,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/show/{id}', 'show')->name(name:'show');
         Route::post('/update/{id}', 'update')->name(name:'update');
         Route::get('/destroy/{id}', 'destroy')->name(name:'destroy');
+    });
+
+    // *********************** ADMIN USER ROUTES ************************
+    Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {
+        Route::get('/', 'index')->name(name:'index');
+        Route::get('/edit/{id}', 'show')->name(name:'edit');
+        Route::get('/show/{id}', 'show')->name(name:'show');
+        Route::post('/update/{id}', 'update')->name(name:'update');
+        Route::get('/destroy/{id}', 'destroy')->name(name:'destroy');
+        Route::post('/addrole/{id}', 'addrole')->name(name:'addrole');
+        Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name(name:'destroyrole');
     });
 });
