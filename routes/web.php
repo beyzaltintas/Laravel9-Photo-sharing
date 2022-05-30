@@ -39,10 +39,10 @@ Route::get('/contact', [HomeController::class,'contact'])->name(name:'contact');
 Route::post('/storemessage', [HomeController::class,'storemessage'])->name(name:'storemessage');
 Route::get('/faq', [HomeController::class,'faq'])->name(name:'faq');
 Route::post('/storecomment', [HomeController::class,'storecomment'])->name(name:'storecomment');
-Route::view('/loginuser','home.login');
-Route::view('/registeruser','home.register');
+Route::view('/loginuser','home.login')->name(name:'loginuser');
+Route::view('/registeruser','home.register')->name(name:'registeruser');
 Route::get('/logoutuser',[HomeController::class,'logout'])->name(name:'logoutuser');
-Route::view('/loginadmin','admin.login');
+Route::view('/loginadmin','admin.login')->name(name:'loginadmin');
 Route::post('/loginadmincheck',[HomeController::class,'loginadmincheck'])->name(name:'loginadmincheck');
 
 
@@ -67,7 +67,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 // *********************** ADMIN PANEL ROUTES ************************
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
    Route::get('/', [AdminHomeController::class,'index'])->name(name:'index');
 // *********************** ADMIN GENERAL ROUTES ************************
     Route::get('/setting', [AdminHomeController::class,'setting'])->name(name:'setting');
