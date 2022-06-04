@@ -118,6 +118,7 @@
                                                 <div class="form-group">
                                                     <input class="form-control" name="subject" id="subject" type="text"
                                                            placeholder="Subject"/>
+
                                                 </div>
                                             </div>
                                             <div class="col-12">

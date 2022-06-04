@@ -58,9 +58,7 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="section_title text-center mb-50">
                         <h3>Browse a category</h3>
-                        <p>Whether you’re about to create a website for the first time, or you’re looking
-                            for a theme that provides advanced capabilities, we have got them in
-                            Blacksilver theme.</p>
+                        <big>You're about to find the perfect photo you've been looking for.</big>
                     </div>
                 </div>
             </div>

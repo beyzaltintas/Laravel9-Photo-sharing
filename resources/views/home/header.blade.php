@@ -29,11 +29,6 @@
                                             <li><a href="single-blog.html">single-blog</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="elements.html">elements</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="{{route('faq')}}">FAQ</a></li>
                                     <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
@@ -43,20 +38,23 @@
 
                     <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                         <div class="social_links">
+
                             <li class="nav-item dropdown nav-user">
                                 <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('assets')}}/admin/assets/images/avatar-1.jpg" style="width: 40px ;height:40px" alt="" class="user-avatar-md rounded-circle"></a>
                                 <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
-                                    <div class="nav-user-info">
-                                        <h5 class="mb-0 text-white nav-user-name">
-                                            {{Auth::user()->name}}</h5>
-                                        <span class="status"></span><span class="ml-2">Available</span>
+                                    @auth()
+                                        <div class="nav-user-info"  style="color: #0b0b0b">
+
+                                                {{Auth::user()->name}}
+
                                     </div>
-                                    <a class="dropdown-item" href="{{route('userpanel.index')}}"><i class="fas fa-user mr-2"></i>Account</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                    @endauth
+                                        <a class="dropdown-item" href="{{route('userpanel.index')}}"><i class="fas fa-user mr-2"></i>My Profile</a>
+                                    <a class="dropdown-item" href="{{route('userpanel.reviews')}}"><i class="fas fa-cog mr-2"></i>My Reviews</a>
+                                        <a class="dropdown-item" href="/logoutuser"><i class="fas fa-power-off mr-2"></i>Checkout</a>
                                     <a class="dropdown-item" href="/logoutuser"><i class="fas fa-power-off mr-2"></i>Logout</a>
                                 </div>
                             </li>
-
 
                             @auth()
                                 <a href="/logoutuser"  class="btn-link" style="color:#ffffff">

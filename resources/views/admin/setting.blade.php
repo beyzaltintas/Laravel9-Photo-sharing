@@ -11,7 +11,7 @@
 
     <!-- wrapper  -->
     <!-- ============================================================== -->
-    <form class="forms-sample" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data" >
+    <div class="forms-sample" action="{{route('admin.setting.update')}}" method="post" enctype="multipart/form-data" >
     <div class="dashboard-wrapper">
         <div class="container-fluid dashboard-content">
             @csrf
@@ -33,7 +33,7 @@
                             <a class="nav-link" id="one-tab-aboutus" data-toggle="tab" href="#one-tab-about" role="tab" aria-controls="one-tab-aboutus" aria-selected="false">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="one-tab-contactpage" data-toggle="tab" href="#one-tab-contact" role="tab" aria-controls="one-tab-contact" aria-selected="false">Contact Page</a>
+                            <a class="nav-link" id="one-tab-contactpage" data-toggle="tab" href="#one-tab-contact" role="tab" aria-controls="one-tab-contactpage" aria-selected="false">Contact Page</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="one-tab-reference" data-toggle="tab" href="#one-tab-references-1" role="tab" aria-controls="one-tab-references" aria-selected="false">References</a>
@@ -162,7 +162,7 @@
             </div>
         </div>
     </div>
-  </form>
+  </div>
 
 </form>
 
